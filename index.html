@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Beautiful숲 Ticket</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="scroll-reveal.js"></script>
+  <script src="scroll-graphs.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+
+</head>
+<body>
+  <div class="ticket-container">
+
+    <!-- Header -->
+    <header class="ticket-header">
+        <div class="title-block">
+            <h1>Beautiful숲 ticket</h1>
+            <h2>야구 vs 콘서트 | 한국방송회관</h2>
+        </div>
+        <p class="date">관람일: 2025년 8월 29일 (금) 18:30</p>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="ticket-main">
+      <!-- Left: Stadium map -->
+      <section class="stadium-map">
+        <img src="stadium-map.png" alt="경기장 좌석 배치도">
+      </section>
+
+      <!-- Right: Seat info -->
+      <section class="seat-info">
+
+        <ul class="seat-list">
+          <li>블루 프라임 A존 | 0석</li>
+          <li class="highlight">그린 프라임 A존 | 1석</li>
+          <li>레드 오리지널 A존 | 0석</li>
+          <li>레드 오리지널 B존 | 0석</li>
+          <li>고잉 피크닉존 | 0석</li>
+        </ul>
+        <span class="click-here"><em>click here</em></span>
+        <button id="reserveBtn" class="reserve-btn">예매하기</button>
+        <!-- Reserve button --> 
+    
+
+      </section>
+
+    </main>
+
+    <!-- Seat picker -->
+
+  </div>
+        <!-- Popup modal -->
+        <div id="popup" class="popup">
+        <div class="dialog" role="dialog" aria-labelledby="alertTitle" aria-describedby="alertMsg">
+            <div class="dialog-header" id="alertTitle">웹 페이지 메시지</div>
+
+            <div class="dialog-body">
+            <!-- Yellow warning triangle (SVG) -->
+            <svg class="icon" viewBox="0 0 64 64" aria-hidden="true">
+                <defs>
+                <linearGradient id="y" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="0" stop-color="#ffd64d"/>
+                    <stop offset="1" stop-color="#ffc107"/>
+                </linearGradient>
+                </defs>
+                <path fill="url(#y)" stroke="#c49000" stroke-width="2"
+                    d="M32 6L3 58h58L32 6z"/>
+                <rect x="30" y="22" width="4" height="18" rx="1.5" fill="#1f1f1f"/>
+                <rect x="30" y="44" width="4" height="4" rx="1" fill="#1f1f1f"/>
+            </svg>
+
+            <p class="dialog-text" id="alertMsg">
+                이미 선택된 좌석입니다.<br>
+                <small>스크롤해서 기사 읽기</small>
+            </p>
+            </div>
+
+            <div class="dialog-footer">
+            <button class="dialog-btn" id="alertOk" autofocus>확인</button>
+            </div>
+        </div>
+  <!-- ⬇️ Arrow button placed BELOW the dialog -->
+  <div class="scroll-arrow" id="scrollArrow" role="button" aria-label="Scroll to article">
+    <svg viewBox="0 0 24 24" width="36" height="36" fill="none" stroke="currentColor" stroke-width="3"
+         stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </div>
+        </div>
+
+  </div> <!-- end of ticket-container -->
+<div id="divider">
+
+</div>
+
+
+  <div id="article" class="article">
+    <div class="intro">
+    <p>열렬한 야구팬인 당신, 경기 직관을 위해 좌석 예매에 도전하지만, <br>이번에도 실패입니다.</p>
+    <p>
+        야구장에 자리는 많은데 늘 ‘내 자리’는 없습니다.
+<br>
+당일 현장 예매를 통해서도 구할 수 있던 야구표, <br>이제는 취소표 대기 시스템이 생길 정도로 구하기 어려워졌습니다.
+    </p>
+    <p>하늘의 별따기가 되어버린 티켓팅, 과연 누가 성공하는 걸까요?</p>
+    </div>
+    
+<div class="stack-container">
+            <div class="image-container"><img src="./ticketAnimation/1.png" alt="random ahh ticket"></div>
+            <div class="image-container"><img src="./ticketAnimation/2.png" alt="random ahh ticket"></div>
+            <div class="image-container"><img src="./ticketAnimation/3.png" alt="random ahh ticket"></div>
+            <div class="image-container"><img src="./ticketAnimation/4.png" alt="random ahh ticket"></div>
+            <div class="image-container"><img src="./ticketAnimation/5.png" alt="random ahh ticket"></div>
+</div>
+
+<div class="title">
+<img src="title.png">
+  <div class="title-text">
+    가지도 않을 표를<br>사는 사람들
+    <p>by Beautiful숲</p>
+    </div>
+
+</div>
+<div class="narrative">
+<p>
+    당신이 구하려던 티켓, 누군가 온라인 티켓 거래 사이트에서 웃돈을 얹어 팔고 있었습니다. 암표상입니다.
+</p>
+<div class="quote-box">
+  <strong>암표:</strong> 공식적 공급사업자나 유통업자가 아닌 자가 자신이 구입한 가격을 초과한 금액으로 다른 사람들에게 되판 입장권이나 승차권.
+  <br><small>
+    국립국어원 표준국어대사전 ‘암표’ 정의, 공연법 제4조의 2 참고
+  </small>
+</div>
+
+<p>
+    아이돌 콘서트나 프로야구 티켓에 대한 수요가 급증하면서 이를 이용해 이득을 취하려는 사람들이 생겼습니다. 이들은 매크로 등을 이용해 인기 공연의 티켓을 사재기한 뒤 티켓베이, 당근마켓, 트위터 등 플랫폼에서 원가보다 더 높은 가격에 되팔고 있습니다.
+
+</p>
+<p>
+    가지도 않을 표를 사는 사람들, 이들은 누구일까요?
+
+</p>
+<p>
+    저희 뷰티풀숲팀이  온라인 티켓 리셀 플랫폼 ‘티켓베이(Ticketbay)’의 암표를 추적해봤습니다.
+
+</p>
+
+<details>
+  <summary>분석 및 추적 방법 더 읽어보기</summary>
+  <div class="narrative normal">
+    <p>
+        ‘티켓베이(Ticketbay)’는 2025년 기준 문화체육관광부 온라인 암표 신고 게시판에서 가장 많이 신고된 플랫폼입니다.(21990건) 2025년 7월 25일 ~ 2025년 8월 24일 까지 티켓베이에 게시된 프로야구 및 콘서트 티켓을 분석했습니다.
+    </p>
+    <p>
+        데이터 수집의 일관성을 위해 고정된 수집 주기를 정했습니다. 야구 경기는 매일 오후 7시 이후, 선예매·일반 예매 시작 1시간 후, 그리고 경기 시작 2시간 전에 데이터를 모았습니다. 공연은 하루 전날과 공연 시작 2시간 전에 수집했습니다.
+    </p>
+  </div>
+</details>
+
+<h1>숫자로 보는 야구 암표 실태</h1>
+<figure class="stats-figure">
+    <img src="img/averages.png" alt="10개 구단 매물 평균" />
+</figure>
+<p>
+  최근 한 달간 티켓베이에 등록된 프로야구 티켓은 3연전(3경기 묶음) 기준 평균 <strong>2234건</strong>으로 집계됐고, 리셀가는 원가의 평균 <strong>1.8배</strong>에 거래되었습니다.
+</p>
+
+<figure class="stats-figure">
+    <img src="img/premium.png" alt="프리미엄 정도 그래프" />
+</figure>
+<p>
+  각 경기 암표는 평균적으로 원가 대비 N%, 인기가 많은 좌석은 최대 N% 정도 가격에 팔리고 있었습니다.
+</p>
+
+
+<p>
+    [설명 추가]
+</p>
+</div>
+
+<div id="stadium">
+<div id="menu">
+  <button onclick="loadStadium('Dusan')">(두산) 서울종합운동장 야구장</button>
+  <button onclick="loadStadium('Hanhwa')">대전 한화생명 볼파크</button>
+  <button onclick="loadStadium('Kium')">(키움) 고척 스카이돔</button>
+  <button onclick="loadStadium('KT'); drawCategoryBarChart('KT')">수원 KT 위즈 파크</button>
+  <button onclick="loadStadium('LG'); drawCategoryBarChart('LG')">한화 vs LG 8/8~8/10</button>
+  <button onclick="loadStadium('Lotte'); drawCategoryBarChart('Lotte')">롯데 vs SSG</button>
+  <button onclick="loadStadium('SSG')">인천 SSG 랜더스필드</button>
+  <button onclick="loadStadium('Samsung')">대구 삼성 라이온즈 파크</button>
+  <button onclick="loadStadium('KIA')">광주 기아 챔피언스 필드</button>
+  <button onclick="loadStadium('NC')">창원NC파크</button>
+</div>
+<div id="container">
+  <div id="chart"></div>
+  <div id="details">
+    <h2 id="details-title"></h2>
+    <div id="details-chart"></div>
+  </div>
+</div>
+<div id="tooltip" class="tooltip"></div>
+</div><script src="stadium.js"></script>
+<div class="narrative">
+
+    <p>
+8월 8일부터 10일까지 열린 한화 이글스와 LG 트윈스의 3연전. 티켓베이에만 무려 6,121개의 매물이 올라온 인기 경기였습니다. 일부 티켓은 정가의 3배가 넘는 가격에 거래되기도 했습니다.
+    </p>
+    <p>
+        그런데 이 경기의 중고 티켓 판매 내역을 살펴보니 수상한 정황이 드러납니다.
+    </p>
+</div>
+
+<div class="scrolly">
+  <div class="scrolly__text">
+    <div class="step active" data-step="5">
+      <div class="text_container">
+        LG 트윈스 공식 예매가 시작된 지 불과 3시간 만인 오후, A씨(ID: 588064)는 티켓베이에 매물을 올리기 시작했습니다. 예매 직후 판매에 나선 것은 관람 목적이 없었다는 정황으로 볼 수 있습니다.
+      </div>
+    </div>
+    <div class="step" data-step="6">
+      <div class="text_container">
+        또한 A씨는 오후 2시 27분부터 2시 56분까지 불과 30분 남짓한 시간 동안 총 33건의 티켓을 등록했습니다. 한 경기당 최대 예매 매수가 8매, 3연전을 모두 합쳐도 최대 24매까지밖에 구매할 수 없는 구조인데, 실제로는 그보다 많은 33장의 티켓을 내놓은 것입니다. 일반적인 팬의 거래로 보기 어려운 대목입니다.
+      </div>
+    </div>
+    <div class="step throwaway"></div>
+  </div>
+
+  <div class="scrolly__graphic">
+    <h1>티켓 거래 속에 드러난 수상한 흔적</h1>
+    <div class = "graphic">
+    <figure class="stats-figure">
+      <figcaption>
+        14시 27분부터 14시 56분까지 A씨 ID로 등록 된 매물
+      </figcaption>
+      <img src="img/events_plot.png" alt="588064" />
+    </figure>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="narrative">
+<p>
+    A씨는 조사 기간 동안 한화와 LG의 3연전을 비롯해 다양한 야구 경기에서 총 425장의 티켓을 중고로 판매했습니다. 총 수익은 7천157만200원에 달합니다.
+</p>
+<p>
+    A씨 이외에도 야구 티켓 리셀을 통해 수익을 얻는 암표상들은 티켓베이에 다수 존재했습니다.
+</p>
+    <figure class="stats-figure">
+      <img src="img/baseball_top10.png" alt="야구 탑10" />
+      <figcaption> 야구 판매 수익, 순매 수량 Top 5 ID
+      </figcaption>
+
+    </figure>
+</div>
+
+
+
+<div class="scrolly">
+  <div class="scrolly__text">
+    <div class="step active" data-step="7">
+      <div class="text_container">
+        7월 25일자 롯데·기아전의 경우, 3분 15초동안 17개의 표를 게시한 판매자(ID: 2605956)도 있었습니다. 티켓 한 장을 약 10초 만에 등록한 셈입니다.
+      </div>
+    </div>
+    <div class="step" data-step="8">
+      <div class="text_container">
+        [설명글]
+      </div>
+    </div>
+    <div class="step" data-step="9">
+      <div class="text_container">
+        취재팀이 직접 실험한 결과, 5명이 평균적으로 티켓 한 장을 올리는 데에는 약 45초가 걸렸습니다. 비정상적으로 빠른 게시 속도와 인당 구매 한도를 넘어선 물량. 정황상 업자의 조직적 거래로밖에 볼 수 없습니다.
+        <br><br>당신이 결린 시간: <span id="user-time">--:--</span>
+      </div>
+    </div>
+    <div class="step throwaway"></div>
+  </div>
+
+  <div class="scrolly__graphic">
+    <div class = "graphic">
+    <div id="graphic-container"></div>
+      <figure class="stats-figure">
+      <figcaption>
+        00시 00분부터 00시 00분까지 0씨 ID로 등록 된 매물
+      </figcaption>
+      <img src="img/events_plot3.png" alt="588064" />
+    </figure>
+
+    </div>
+  </div>
+</div>
+
+<template id="simulation-template">
+<button class="start-btn" onclick="startSimulation()">시뮬레이션 시작하기</button>
+<div class="container" id="simulation">
+    <div class="stopwatch" id="stopwatch">00:00</div>
+
+    <div class="section">
+      <h3>카테고리 선택</h3>
+      <p>스포츠 &gt; 야구 &gt; 한화 이글스</p>
+    </div>
+
+    <div class="section">
+      <h3>경기 일시</h3>
+      <input type="date"> <input type="time">
+    </div>
+
+    <div class="section">
+      <h3>판매 가격</h3>
+      <input type="number" placeholder="₩ 가격 입력"> 원
+    </div>
+
+    <div class="section">
+      <h3>티켓 보유 여부</h3>
+      <label><input type="radio" name="ticket"> 보유</label>
+      <label><input type="radio" name="ticket"> 미보유</label>
+    </div>
+
+    <div class="section">
+      <h3>거래 설명</h3>
+      <textarea rows="4" style="width:100%;"></textarea>
+    </div>
+
+    <button class="register-btn" onclick="finishSimulation()">등록완료</button>
+    <div class="result" id="result"></div>
+</template> 
+<script src="ticketbay-simulation.js"></script>
+
+<div class="narrative">
+    <h1>암표상의 온상, 아이돌 공연</h1>
+    <p>
+야구 경기만의 문제가 아닙니다. 아이돌 콘서트 티켓 시장은 오래전부터 암표상들의 무대였습니다.
+    </p>
+    <p>
+매크로, 대리 예매, 사기 등으로 잡음이 끊이지 않았고, 특히 가격 프리미엄이 압도적으로 높게 형성되는 특징을 보입니다.
+    </p>
+</div>
+
+<div class="scrolly">
+  <div class="scrolly__text">
+    <div class="step active" data-step="10">
+      <div class="text_container"> 
+조사 기간 동안 거래가 이루어진 아이돌 콘서트 4개(보이넥스트도어, 슈퍼주니어, 에스파, 투모로우바이투게더)를 분석했습니다. 분석 결과 투모로우바이투게더 M&G 구역 티켓은 평균 1,080.7%의 프리미엄으로 거래돼, 조사 대상 가운데 최고치를 기록했습니다.     
+      </div>
+    </div>
+  <div class="step" data-step="11"> 
+      <div class="text_container">
+콘서트별 평균 프리미엄은 최소 2.4배에서 최대 7.6배로 나타났습니다. 반면 야구는 최소 1.01배, 최대 3.6배에 그쳐, 아이돌 콘서트 티켓의 프리미엄 비율이  두 배 이상 높게 형성돼 있음을 확인할 수 있습니다.      
+    </div>
+  </div>
+    <div class="step" data-step="12">
+      <div class="text_container">
+콘서트별 평균 프리미엄은 최소 2.4배에서 최대 7.6배로 나타났습니다. 반면 야구는 최소 1.01배, 최대 3.6배에 그쳐, 아이돌 콘서트 티켓의 프리미엄 비율이  두 배 이상 높게 형성돼 있음을 확인할 수 있습니다.
+      </div>
+    </div>
+    <div class="step" data-step="13">
+      <div class="text_container">
+일부 암표상들은 프로야구와 아이돌 콘서트 시장을 넘나들며 수익을 챙겼습니다.
+      </div>
+    </div>
+    <div class="step" data-step="14">
+      <div class="text_container">
+조사 기간 동안 확인된 암표상들의 활동 내역을 정리했습니다.
+      </div>
+    </div>
+    <div class="step" data-step="15">
+      <div class="text_container">
+최대 9천만 원이 넘는 이익을 남긴 경우도 있었습니다.
+      </div>
+    </div>
+    <div class="step throwaway"></div>
+  </div>
+
+  <div class="scrolly__graphic">
+    <div class="graphic">
+      <div class="premium_avg"><iframe src="./charts/idol_ticket_premium_avg.html" height="800" width="800" style="border:0px" title="description"></iframe></div>
+      <div class="premium"><iframe src="./charts/idol_ticket_premium.html" height="800" width="800" style="border:0px" title="description"></iframe></div>
+      <div class="concert_top10">
+        <figure class="stats-figure">
+          <img src="img/concert_top10.png" alt="concert" />
+        </figure>
+      </div>
+      <div class="concert_baseball_top5">
+        <figure class="stats-figure">
+          <img src="img/concert_baseball_top5.png" alt="concert" />
+        </figure>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<div class="conclusion">
+<div class="narrative">
+<p>곳곳에서 모습을 드러내는 암표상. 잡아내 처벌할 수 있을까요?</p>
+
+<p>현행법으로는 사실상 불가능합니다. </p>
+<p>먼저, ‘암표’의 개념부터 정확히 짚어볼 필요가 있습니다. 국립국어원 표준국어대사전은 암표를 다음과 같이 정의합니다.</p>
+<div class="quote-box">
+    <strong>암표란?</strong>
+    <br>법을 위반하여 몰래 사고파는 각종 탑승권, 입장권 따위의 표.
+    <br>
+      <small>국립국어원 표준국어대사전</small>
+
+</div>
+
+<p>어떤 법을 근거로 하느냐에 따라 암표의 범위와 부정거래 여부가 달라집니다. </p>
+
+<p>문제는 현행 법률 어디에도  <span id=’highlight’>‘암표’ 자체를 정의한 조항이 없다</span>는 점입니다. ‘암표 매매’나 ‘부정 거래’처럼 <strong>행위를 규제</strong>할 뿐, 암표의 개념을 통일해 규정하고 있지 않습니다.
+<br>
+관련 조항은 대표적으로 두 가지입니다.</p>
+
+<div class="quote-box law">
+    <strong>경범죄 처벌법 제3조(경범죄의 종류)4항 </strong>
+    <br>4. (암표매매) 흥행장, 경기장, 역, 나루터, 정류장, 그 밖에 정하여진 요금을 받고 입장시키거나 승차 또는 승선시키는 곳에서 웃돈을 받고 입장권ㆍ승차권 또는 승선권을 다른 사람에게 되판 사람
+    <br>
+      <small><strong>위반 시 : 20만원 이하의 벌금, 구류 또는 과료</strong></small>
+
+</div>
+<p>→ 현장에서 웃돈을 받고 되파는 행위만을 규제</p>
+
+
+<div class="quote-box law">
+    <strong>공연법 제4조의2(입장권등의 부정판매 금지 등)</strong>
+    <br>① 문화체육관광부장관은 공연의 입장권ㆍ관람권 또는 할인권ㆍ교환권 등(이하 “입장권등”이라 한다)의 부정판매(입장권 등을 판매하거나 그 판매를 위탁받은 자의 동의를 받지 아니한 자가 다른 사람에게 입장권 등을 상습 또는 영업으로 자신이 구입한 가격을 넘은 금액으로 판매하거나 이를 알선하는 행위를 말한다. 이하 같다)를 방지하기 위하여 노력하여야 한다.
+    <br>② 누구든지 「정보통신망 이용촉진 및 정보보호 등에 관한 법률」 제2조제1항제1호에 따른 정보통신망에 지정된 명령을 자동으로 반복 입력하는 프로그램을 이용하여 입장권등을 부정판매하여서는 아니 된다.
+    <br>
+      <small><strong>위반 시 : 20만원 이하의 벌금, 구류 또는 과료</strong></small>
+
+</div>
+
+<p>→ ‘암표’ 대신 ‘부정판매’라는 개념을 사용하며, 상습·영업 목적이거나 매크로 이용한 경우에 한해 처벌. </p>
+<p>결국 두 법률 모두 암표 거래의 <strong>일부 행위만을 규제</strong>할 뿐입니다.</p>
+
+<p>단순한 개인 간 중고 거래는 규제 대상이 아니며, 온라인에서 활동하는 암표상을 처벌하려면 매크로 사용 사실을 입증해야 합니다.</p>
+
+<p>그러나 매크로 사용을 적발하는 것은 기술적으로도 쉽지 않습니다. 감시 인력은 턱없이 부족하고, 이를 전담할 구체적인 대책도 마련돼 있지 않습니다. 결국 온라인 암표상 단속은 사실상 불가능한 상황입니다.</p>
+</div>
+<div class="chart-row">
+  <iframe src="./charts/arts_신고.html" title="description"></iframe>
+  <iframe src="./charts/art_조치_donut.html" title="description"></iframe>
+</div>
+<div class="chart-row">
+  <iframe src="./charts/sports_신고.html" title="description"></iframe>
+  <iframe src="./charts/스포츠조치_donut.html" title="description"></iframe>
+</div>
+
+<div class="narrative">
+<p>대책으로 내놓은 신고 시스템도 제 역할을 하지 못하고 있습니다. </p>
+
+<p>문화체육관광부가 문화 콘텐츠와 프로스포츠 관련 암표 신고 게시판을 운영하고 있지만, 실효성은 크지 않습니다. 2020년 1월부터 2025년 6월까지 접수된 암표 거래 신고는 총 N건으로 꾸준히 늘었지만, 같은 기간 수사 의뢰는 4건에 불과했습니다.</p>
+
+<h2>암표가 남긴 과제</h2>
+<p>전문가들은 암표 확산이 단순한 티켓 문제가 아니라 <strong>소비 공정성을 근본적으로 흔드는 문제</strong>라고 지적합니다.</p>
+
+<p>숙명여대 소비자경제학과 이홍주 교수는, 암표가 확산될 경우 티켓이 열성적인 팬이 아닌 자본과 기술을 가진 중간상에게 돌아가게 되고, 이 과정에서 “규칙을 지킨 소비자가 손해 본다”는 인식이 퍼지면서 시장 전반의 신뢰가 약화된다고 설명했습니다. 가격 역시 공연의 가치와 연결되지 못해, 소비자들은 ‘바가지를 쓴다’는 불신을 갖게 된다는 겁니다.</p>
+
+<p>이 교수는 또 “리셀 프리미엄은 소득과 정보 접근성에서 불리한 집단에 더 큰 부담을 지우고, 결국 <strong>누가 공연을 즐길 기회를 갖느냐</strong>라는 형평성 문제로 이어진다”며 문화 접근권 역시 침해된다고 지적했습니다.</p>
+
+<p>해결책으로는 암표를 완전히 없애기보다는 위험 프리미엄을 줄이고 공정성과 투명성을 높이는 방안을 제시했습니다. 그는 “공식 리셀 마켓 도입, 반복 집행, 추첨·가중치 기반 배분, 가격 가드레일 같은 다층적 장치가 함께 작동해야 한다”고 강조했습니다.</p>
+<hr>
+<p>암표는 단순한 웃돈 거래가 아닙니다.</p>
+
+<p><strong>소비 공정성</strong>을 무너뜨리고, 시장 규칙과 가격 신뢰, 나아가 <strong>문화 접근성</strong>까지 흔드는 구조적 문제입니다.</p>
+
+<p>암표를 뿌리 뽑기는 쉽지 않습니다. 하지만, 공정성과 투명성을 높일 장치를 마련한다면 피해를 줄이고 시장의 신뢰를 회복할 수 있습니다. 
+
+암표 문제를 정확히 짚고 실효성 있는 대책을 세울 때, 티켓 시장은 더 공정하고 지속가능한 방향으로 나아갈 것입니다.</p>
+
+</div>
+</div>
+
+<!-- Footer -->
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="footer-logo">🌳Beautiful숲</p>
+    <p class="footer-credit">© 2025 Beautiful숲 | 기획·제작: 김수빈, 이가은, 이민규, 현주영</p>
+    <p class="footer-links">
+      <a href="#top"> · 맨 위로 · </a>
+    </p>
+  </div>
+</footer>
+
+
+</div> <!-- end of article -->
+
+
+<script>
+  const popup = document.getElementById('popup');
+  const openBtn = document.getElementById('reserveBtn');
+  const okBtn = document.getElementById('alertOk');
+    popup.style.display = "none";
+    document.body.style.overflow = "hidden"; // lock scroll
+  openBtn.addEventListener('click', () => {
+    popup.style.display = 'flex';
+    okBtn.focus();
+    article.style.display = "block";       // reveal article
+    document.body.style.overflow = "";     // unlock scroll
+  });
+document.getElementById("scrollArrow").addEventListener("click", () => {
+  document.getElementById("divider").scrollIntoView({ behavior: "smooth" });
+});
+
+  // close on OK or clicking overlay
+  okBtn.addEventListener('click', () => popup.style.display = 'none');
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) popup.style.display = 'none';
+  });
+
+  // Esc key to close
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && popup.style.display === 'flex') {
+      popup.style.display = 'none';
+    }
+  });
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
