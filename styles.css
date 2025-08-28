@@ -343,6 +343,7 @@ details {
   border-radius: 8px;
   padding: 0.8em 1em;
   margin: 1.5em 0;
+  color:#3d3d3d;
 
 }
 
@@ -357,6 +358,7 @@ details[open]{
 }
 .narrative.normal{
     margin:0% !important;
+    color:#3d3d3d;
 }
 
 .stack-container {
@@ -441,12 +443,7 @@ font-size: clamp(1rem, 3vw, 3rem);
   color: #444;
   background: #FFFAE7;
 }
-.quote-box::before {
-  content: "“";
-  font-size: 2rem;
-  color: #a4d19d;
-  margin-right: 0.25em;
-}
+
 .quote-box.law{
   border-left: 6px solid #a3763c; /* bold color */
 }
@@ -471,6 +468,17 @@ font-size: clamp(1rem, 3vw, 3rem);
   top: 50px;
   align-items: center;
   justify-self: center;
+}
+/* second figure's image starts hidden */
+.scrolly__graphic .graphic .stats-figure:nth-of-type(2) img {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  will-change: opacity;
+}
+
+/* becomes visible when step >= 8 */
+.scrolly__graphic .graphic .stats-figure:nth-of-type(2) img.visible {
+  opacity: 1;
 }
 
 .scrolly__text {
@@ -650,7 +658,15 @@ font-size: clamp(1rem, 3vw, 3rem);
     }
 
     /*stadium*/
-    #menu { padding: 10px; background: #fffff8; }
+    #menu {
+  text-align: center;   /* 버튼 그룹 전체를 가운데 정렬 */
+  margin: 2rem 0;
+}
+
+.date-group {
+  margin-bottom: 1.5rem; /* 날짜 그룹 간 간격 */
+}
+
     #menu button {
         font-size: 15px;
       margin-right: 10px; padding: 6px 12px;
@@ -721,7 +737,7 @@ font-size: clamp(1rem, 3vw, 3rem);
   left: 0;
   right: 0;
   height: 20%;    /* gradient height */
-  background: linear-gradient(to bottom, white, #000000);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #000000);
   z-index: -1;    /* behind the box */
 }
 
@@ -810,24 +826,16 @@ font-size: clamp(1rem, 3vw, 3rem);
   grid-template-columns: 1fr 1fr; /* 2개씩 */
   gap: 1.5rem;                   /* 조금 좁게 */
   margin-bottom: 1.5rem;
+  justify-items: center;
 }
 
 .chart-row iframe {
-  width: 100%;
-  height: 500px;  /* 🔽 높이를 줄여서 컴팩트하게 */
+  height: 740px;  /* 🔽 높이를 줄여서 컴팩트하게 */
   border: none;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   border-radius: 10px; /* 둥근 모서리도 살짝 줄임 */
   background: #fff;
+  width: 90%;
+  margin: 0 auto;
 }
 
-/* 반응형: 모바일에서는 1열 */
-@media (max-width: 900px) {
-  .chart-row {
-    grid-template-columns: 1fr;
-  }
-
-  .chart-row iframe {
-    height: 420px;  /* 모바일에서는 조금 더 줄임 */
-  }
-}

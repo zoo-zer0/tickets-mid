@@ -15,9 +15,9 @@ const intersect = document.querySelector(".concert_baseball_top5");
       premiumAvg.classList.add("active");
     } else if (step === "11" || step === "12") {
       premium.classList.add("active");
-    } else if (step === "13") {
+    } else if (step === "13"||step === "14") {
       top.classList.add("active");
-    } else if (step === "14"||step==="15") {
+    } else if (step==="15"||step === "16") {
       intersect.classList.add("active");
     }
   }
@@ -41,4 +41,27 @@ const intersect = document.querySelector(".concert_baseball_top5");
   if (activeStep) {
     updateGraphic(activeStep.getAttribute("data-step"));
   }
+  // ---- step 8에서 두 번째 이미지 reveal ----
+  const secondImg = document.querySelector(
+    ".scrolly__graphic .graphic .stats-figure:nth-of-type(2) img"
+  );
+
+  const step8Observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const stepNumber = entry.target.getAttribute("data-step");
+          if (stepNumber === "8") {
+            secondImg.classList.add("visible"); // 한번 나타나면 그대로 유지
+          }
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  // step 8만 관찰
+  const step8 = document.querySelector('.step[data-step="8"]');
+  if (step8) step8Observer.observe(step8);
+  
 });
