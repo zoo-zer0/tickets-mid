@@ -1,5 +1,5 @@
-const imageWidth = 800;   // new desired width
-const imageHeight = 800;  // new desired height
+const imageWidth = 600;   // new desired width
+const imageHeight = 600;  // new desired height
 
 const xScale = d3.scaleLinear().domain([0, 950]).range([0, imageWidth]);
 const yScale = d3.scaleLinear().domain([0, 950]).range([0, imageHeight]);
