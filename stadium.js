@@ -206,7 +206,7 @@ function drawCategoryBarChart(team) {
   const data = category[team];  // category JSON에서 팀 데이터 가져오기
 
   d3.select("#details-title")
-    .text(`${team} 구역별 원가 vs 중앙 거래 가격`);
+    .text(`${team} 구역별 원가 vs 평균 거래 가격`);
 
   d3.select("#details-chart").selectAll("*").remove();
 
