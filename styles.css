@@ -825,17 +825,17 @@ font-size: clamp(1rem, 3vw, 3rem);
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2개씩 */
   gap: 1.5rem;                   /* 조금 좁게 */
-  margin-bottom: 1.5rem;
   justify-items: center;
 }
 
 .chart-row iframe {
-  height: 740px;  /* 🔽 높이를 줄여서 컴팩트하게 */
+  height: 540px;  /* 🔽 높이를 줄여서 컴팩트하게 */
   border: none;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   border-radius: 10px; /* 둥근 모서리도 살짝 줄임 */
   background: #fff;
-  width: 90%;
+  width: 550px;
   margin: 0 auto;
 }
+
 
