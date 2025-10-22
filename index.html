@@ -8,6 +8,7 @@
   <script src="scroll-graphs.js"></script>
   <script src="https://unpkg.com/scrollama"></script>
     <script src="https://d3js.org/d3.v7.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 </head>
@@ -212,21 +213,21 @@
 <div id="stadium">
 <div id="menu">
   <div class="date-group">
-    <button onclick="loadStadium('Kiwoom'); drawCategoryBarChart('Kiwoom')">키움 vs 두산 (8/8-8/10)</button>
-    <button onclick="loadStadium('KT'); drawCategoryBarChart('KT')">KT vs 삼성 (8/8-8/10)</button>
-    <button onclick="loadStadium('LG'); drawCategoryBarChart('LG')">LG vs 한화 (8/8-8/10)</button>
-    <button onclick="loadStadium('Lotte'); drawCategoryBarChart('Lotte')">롯데 vs SSG (8/8-8/10)</button>
+    <button onclick="loadStadium('Kiwoom'); drawCategoryBarChart('Kiwoom')">두산 vs 키움(8/8-8/10)</button>
+    <button onclick="loadStadium('KT'); drawCategoryBarChart('KT')">삼성 vs KTKT vs 삼성 (8/8-8/10)</button>
+    <button onclick="loadStadium('LG'); drawCategoryBarChart('LG')">한화 vs LG (8/8-8/10)</button>
+    <button onclick="loadStadium('Lotte'); drawCategoryBarChart('Lotte')">SSG vs 롯데 (8/8-8/10)</button>
   </div>
 
   <div class="date-group">
-    <button onclick="loadStadium('Dusan'); drawCategoryBarChart('Dusan')">두산 vs LG (7/25-7/26)</button>
-    <button onclick="loadStadium('NC'); drawCategoryBarChart('NC')">NC vs 키움 (7/25-7/26)</button>
+    <button onclick="loadStadium('Dusan'); drawCategoryBarChart('Dusan')">LG vs 두산 (7/25-7/26)</button>
+    <button onclick="loadStadium('NC'); drawCategoryBarChart('NC')">키움 vs NC (7/25-7/26)</button>
   </div>
 
   <div class="date-group">
-    <button onclick="drawCategoryBarChart('Hanhwa'); loadStadium('Hanhwa')">한화 vs 롯데 (8/12-8/14)</button>
-    <button onclick="drawCategoryBarChart('SSG'); loadStadium('SSG')">SSG vs 키움 (8/12-8/14)</button>
-    <button onclick="drawCategoryBarChart('Samsung'); loadStadium('Samsung')">삼성 vs 기아 (8/12-8/14)</button>
+    <button onclick="drawCategoryBarChart('Hanhwa'); loadStadium('Hanhwa')">롯데 vs 한화 (8/12-8/14)</button>
+    <button onclick="drawCategoryBarChart('SSG'); loadStadium('SSG')">키움 vs SSG (8/12-8/14)</button>
+    <button onclick="drawCategoryBarChart('Samsung'); loadStadium('Samsung')">기아 vs 삼성 (8/12-8/14)</button>
   </div>
 </div>
 
@@ -397,8 +398,8 @@ A씨(ID:588064)는 <strong>5천만 원</strong>이 넘는 이익과 <strong>429�
 
   <div class="scrolly__graphic">
     <div class="graphic">
-      <div class="premium"><iframe src="./charts/idol_ticket_premium_avg.html" height="800" width="800" style="border:0px" title="description"></iframe></div>
-      <div class="premium_avg"><iframe src="./charts/idol_ticket_premium.html" height="800" width="800" style="border:0px" title="description"></iframe></div>
+      <div class="premium"><iframe src="./charts/idol_ticket_premium_avg.html" height="500" width="100%" style="border:0px" title="description"></iframe></div>
+      <div class="premium_avg"><iframe src="./charts/idol_ticket_premium.html" height="500" width="100%" style="border:0px" title="description"></iframe></div>
       <div class="concert_top10">
         <figure class="stats-figure">
           <img src="img/중복top5.png" alt="concert" />
@@ -477,12 +478,13 @@ A씨(ID:588064)는 <strong>5천만 원</strong>이 넘는 이익과 <strong>429�
 <p>
   2023년 11월부터 2025년 6월까지 접수된 3178건 중 티켓 발권내역을 특정할 수 있는 <strong>유효신고는 289건(9.1%)</strong>이었습니다. 이 가운데 30%에 해당하는 88건은 별도 조치가 이뤄지지 않았습니다.
 </p>
-</div>
 
 <div class="chart-row">
   <iframe src="./charts/sports_신고.html" title="description"></iframe>
   <iframe src="./charts/스포츠조치_donut.html" title="description"></iframe>
 </div>
+</div>
+
 
 <div class="narrative">
 <p>
@@ -548,7 +550,7 @@ A씨(ID:588064)는 <strong>5천만 원</strong>이 넘는 이익과 <strong>429�
 <footer class="site-footer">
   <div class="footer-inner">
     <p class="footer-logo">🌳Beautiful숲</p>
-    <p class="footer-credit">© 2025 Beautiful숲 | 기획·제작: 김수빈, 이가은, 이민규, 현주영</p>
+    <p class="footer-credit">© 2025 Beautiful숲 | 기획·제작: 김수빈, 이가은, 이민규, 이소연, 현주영</p>
     <p class="footer-links">
       <a href="#top"> · 맨 위로 · </a>
     </p>

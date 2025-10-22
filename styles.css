@@ -330,6 +330,7 @@ body {
     max-width: 700px;
     font-size: 20px;
     margin-bottom: 5rem auto;
+    width: 85%;
 }
 .article .intro{
     text-align: center;
@@ -345,6 +346,11 @@ details {
   margin: 1.5em 0;
   color:#3d3d3d;
 
+}
+#details-chart {
+  width:100%;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 details[open] summary {
@@ -454,8 +460,8 @@ font-size: clamp(1rem, 3vw, 3rem);
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  width: 100%;
-  max-width: 1400px;
+  width: 95%;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 40px 0;
 }
@@ -483,11 +489,11 @@ font-size: clamp(1rem, 3vw, 3rem);
 
 .scrolly__text {
   flex: 0 0 30%;
-  margin-right: 2.5%;
   display: flex;
   flex-direction: column;
   gap: 10vh;
   z-index: 2;
+  margin-right: 20px;
 }
 .scrolly__graphic .graphic {
   display: flex;
@@ -500,7 +506,7 @@ font-size: clamp(1rem, 3vw, 3rem);
 .scrolly__graphic .stats-figure {
   text-align: center;
   max-width: 800px;
-  width: 100%;
+  width: 70%;
 }
 
 .scrolly__graphic .stats-figure img {
@@ -703,6 +709,7 @@ font-size: clamp(1rem, 3vw, 3rem);
   padding: 20px;
 }
 
+
 #details {
   flex: 0 0 400px;   /* fixed width for the chart */
   padding: 5px;
@@ -756,7 +763,7 @@ font-size: clamp(1rem, 3vw, 3rem);
 
 /* Image styling */
 .stats-figure img {
-  width: 100%;
+  width: 90%;
   max-width: 800px;
   border-radius: 12px;
   transition: transform 0.2s ease-in-out;
@@ -824,7 +831,7 @@ font-size: clamp(1rem, 3vw, 3rem);
 .chart-row {
   display: grid;
   grid-template-columns: 1fr 1fr; /* 2개씩 */
-  gap: 1.5rem;                   /* 조금 좁게 */
+/*  gap: 1.5rem;                   /* 조금 좁게 */
   justify-items: center;
 }
 
@@ -839,3 +846,40 @@ font-size: clamp(1rem, 3vw, 3rem);
 }
 
 
+@media (max-width: 900px) {
+  /* styles for small screens */
+  #stadium{
+    display: flex;
+  }
+  #menu {
+    width: 30%;
+    margin-right: 5%;
+   margin-left: 1%;
+  }
+  #menu {
+    margin-bottom:5%;
+  }
+  #container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 100%;
+    height:100%;
+  }
+  .chart-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;  
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1200px) {
+  /* styles for medium screens (like tablets) */
+  .chart-row{
+    display: flex;
+    flex-wrap: wrap;
+        gap: 1.5rem;  
+
+  }
+}
