@@ -671,6 +671,7 @@ font-size: clamp(1rem, 3vw, 3rem);
 
 .date-group {
   margin-bottom: 1.5rem; /* 날짜 그룹 간 간격 */
+  width: 150px;
 }
 
     #menu button {
@@ -683,7 +684,6 @@ font-size: clamp(1rem, 3vw, 3rem);
     #menu button:hover, #menu button.active { background: #608b67; color: white;}
     #chart {
       width: 100%;
-      height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
